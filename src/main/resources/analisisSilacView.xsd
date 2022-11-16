@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://spring.io/guides/italcol/producing-web-service"
+           targetNamespace="http://spring.io/guides/italcol/producing-web-service"
+           elementFormDefault="qualified">
+
+    <xs:element name="SilacRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numSilac" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SilacResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="listaSilac" type="tns:Silac"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType  name="Silac">
+        <xs:sequence >
+            <xs:element name="numSilac" type="xs:int"/>
+            <xs:element name="productName" type="xs:string"/>
+            <xs:element name="nirAnalisisTime" type="xs:dateTime"/>
+            <xs:element name="tipoSolicitud" type="xs:string"/>
+            <xs:element name="lineaProducto" type="xs:string"/>
+            <xs:element name="presentacion" type="xs:string"/>
+            <xs:element name="numeroOrder" type="xs:int"/>
+            <xs:element name="orderProduccion" type="xs:int"/>
+            <xs:element name="numeroFormula" type="xs:int"/>
+            <xs:element name="lote" type="xs:int"/>
+            <xs:element name="loteGenerado" type="xs:string"/>
+            <xs:element name="analisis" type="xs:string"/>
+            <xs:element name="valor" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+</xs:schema>
